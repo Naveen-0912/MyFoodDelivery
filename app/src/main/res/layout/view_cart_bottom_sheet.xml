@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+    android:background="?attr/colorSecondary"
+    app:behavior_hideable="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/iv_cart"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/cart"
+        android:elevation="10dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/btn_place_order"
+        app:layout_constraintTop_toTopOf="@id/btn_place_order" />
+
+    <TextView
+        android:id="@+id/tv_total_items_selected"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="10dp"
+        tools:text="500 Items Added"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:gravity="center"
+        android:textColor="?android:textColorPrimary"
+        app:layout_constraintStart_toEndOf="@id/iv_cart"
+        app:layout_constraintEnd_toStartOf="@id/btn_place_order"
+        app:layout_constraintTop_toTopOf="@id/btn_place_order"
+        app:layout_constraintBottom_toBottomOf="@id/btn_place_order" />
+
+    <Button
+        android:id="@+id/btn_place_order"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.5"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_marginVertical="15dp"
+        android:layout_marginEnd="16dp"
+        android:paddingVertical="8dp"
+        android:background="@drawable/button_background"
+        android:text="@string/btn_view_cart"
+        android:textSize="15sp"
+        android:textColor="?attr/colorOnPrimary"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_total_items_selected"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

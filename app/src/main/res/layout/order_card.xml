@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cl_for_order_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <include
+        android:id="@+id/hotel_card_portrait"
+        layout="@layout/hotel_card_portait"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <include
+        android:id="@+id/hotel_card_landscape"
+        layout="@layout/hotel_card_landscape"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintHeight_percent="0.20"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="48dp"
+        android:numStars="5"
+        android:stepSize="0.5"
+        android:progressTint="@color/gold"
+        android:progressBackgroundTint="@color/gray_light"
+        android:secondaryProgressTint="@android:color/transparent"
+        app:layout_constraintTop_toBottomOf="@id/hotel_card_portrait"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_rate"/>
+
+    <Button
+        android:id="@+id/btn_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_background"
+        android:text="@string/btn_rate_text"
+        android:textAllCaps="false"
+        android:textColor="@color/pale_white"
+        android:textSize="20sp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/rating_bar"
+        app:layout_constraintTop_toTopOf="@id/rating_bar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

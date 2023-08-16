@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cl_for_item_card">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cv_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="?android:windowBackground"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_menu_item"
+            android:paddingTop="24dp"
+            android:background="@drawable/card_ripple_background"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/iv_item_type"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/veg_indicator"
+                android:layout_marginStart="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/cv_for_image"
+                app:layout_constraintBottom_toTopOf="@+id/tv_item_title" />
+
+            <TextView
+                android:id="@+id/tv_item_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingStart="4dp"
+                tools:text="Veg"
+                android:textStyle="bold"
+                android:textColor="@color/green"
+                app:layout_constraintTop_toTopOf="@id/iv_item_type"
+                app:layout_constraintBottom_toBottomOf="@id/iv_item_type"
+                app:layout_constraintStart_toEndOf="@id/iv_item_type" />
+
+
+            <TextView
+                android:id="@+id/tv_item_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:textSize="25sp"
+                tools:text="Fried Chicken"
+                android:textStyle="bold"
+                android:maxLines="3"
+                android:textAllCaps="false"
+                android:ellipsize="end"
+                android:textColor="?android:textColorSecondary"
+                android:paddingEnd="4dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintTop_toBottomOf="@id/iv_item_type"
+                app:layout_constraintEnd_toStartOf="@id/cv_for_image"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_item_price"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                tools:text="$ 500"
+                android:textSize="20sp"
+                android:paddingBottom="10dp"
+                android:textColor="?android:textColorSecondary"
+                app:layout_constraintStart_toStartOf="@id/tv_item_title"
+                app:layout_constraintTop_toBottomOf="@id/tv_item_title" />
+
+            <TextView
+                android:id="@+id/tv_item_rating"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="?android:textColorSecondary"
+                tools:text="4.5 (100 ratings)"
+                android:textSize="20sp"
+                android:paddingBottom="12dp"
+                app:drawableStartCompat="@drawable/baseline_star_rate_24"
+                android:drawablePadding="5dp"
+                app:layout_constraintTop_toBottomOf="@id/tv_item_price"
+                app:layout_constraintStart_toStartOf="@id/tv_item_price" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cv_for_image"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                app:cardCornerRadius="20dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.35">
+
+                <ImageView
+                    android:id="@+id/iv_item_picture"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:adjustViewBounds="true"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/hotel_baratie" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_for_item_add_subtract_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp"
+                android:layout_marginTop="8dp"
+                app:cardElevation="0dp"
+                android:visibility="invisible"
+                app:layout_constraintTop_toBottomOf="@id/cv_for_image"
+                app:layout_constraintStart_toStartOf="@id/cv_for_image"
+                app:layout_constraintEnd_toEndOf="@id/cv_for_image" >
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/menu_item_add_subtract_button_background">
+                    <ImageButton
+                        android:id="@+id/img_btn_subtract"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/outline_subtract_24"
+                        app:tint="?attr/colorPrimary"
+                        android:background="@android:color/transparent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                    <TextView
+                        android:id="@+id/tv_no_of_items"
+                        android:layout_width="35dp"
+                        android:layout_height="40dp"
+                        android:text="0"
+                        android:textColor="?attr/colorPrimary"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/img_btn_subtract" />
+                    <ImageButton
+                        android:id="@+id/img_btn_add"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        app:tint="?attr/colorPrimary"
+                        android:background="@android:color/transparent"
+                        android:src="@drawable/outline_add_24"
+                        app:layout_constraintStart_toEndOf="@id/tv_no_of_items"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btn_add_item"
+                android:layout_width="105dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="8dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:text="@string/add"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:background="@drawable/menu_item_add_subtract_button_background_ripple"
+                app:backgroundTint="@null"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@id/cv_for_image"
+                app:layout_constraintStart_toStartOf="@id/cv_for_image"
+                app:layout_constraintEnd_toEndOf="@id/cv_for_image" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="70dp"
+                android:background="@color/gray_light"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cv_for_image" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cl_view_particular_order"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?android:windowBackground"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_arrow_back_24"
+        android:backgroundTint="?android:windowBackground"
+        android:elevation="2dp"
+        android:background="@null"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tv_my_orders"
+        app:layout_constraintBottom_toBottomOf="@id/tv_my_orders" />
+
+    <TextView
+        android:id="@+id/tv_my_orders"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:textSize="25sp"
+        android:text="@string/my_orders_text"
+        android:textColor="?android:textColorPrimary"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@drawable/textview_background"
+        android:elevation="1dp"
+        android:layout_marginBottom="4dp"
+        app:layout_constraintBottom_toTopOf="@id/rv_food_items"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_food_items"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingBottom="40dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_my_orders"
+        app:layout_constraintBottom_toTopOf="@id/btn_total_price"/>
+
+    <TextView
+        android:id="@+id/btn_total_price"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:textSize="20sp"
+        android:paddingBottom="16dp"
+        android:layout_marginTop="4dp"
+        android:textColor="?android:textColorPrimary"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="@drawable/textview_background"
+        android:elevation="1dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rv_food_items"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

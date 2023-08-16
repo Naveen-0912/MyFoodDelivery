@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?android:windowBackground">
+
+        <ImageView
+            android:id="@+id/iv_login_screen"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.45"
+            android:src="@drawable/login_food"
+            android:scaleType="centerCrop"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintWidth_percent="0.9"
+            android:fillViewport="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/gl_margin_top"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                app:cardElevation="0dp"
+                app:cardCornerRadius="20dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="?android:windowBackground">
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintWidth_percent="0.35"
+                        android:background="@color/gray_light"
+                        app:layout_constraintEnd_toStartOf="@id/tv_login_screen_banner"
+                        app:layout_constraintTop_toTopOf="@id/tv_login_screen_banner"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_login_screen_banner"/>
+
+                    <TextView
+                        android:id="@+id/tv_login_screen_banner"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/login_label"
+                        android:textColor="?android:attr/textColorTertiary"
+                        android:textStyle="bold"
+                        android:paddingHorizontal="16dp"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintBottom_toTopOf="@+id/til_mobile_no"
+                        app:layout_constraintEnd_toStartOf="parent"
+                        app:layout_constraintStart_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="1dp"
+                        app:layout_constraintWidth_percent="0.35"
+                        android:background="@color/gray_light"
+                        app:layout_constraintStart_toEndOf="@id/tv_login_screen_banner"
+                        app:layout_constraintTop_toTopOf="@id/tv_login_screen_banner"
+                        app:layout_constraintBottom_toBottomOf="@id/tv_login_screen_banner"/>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_mobile_no"
+                        android:layout_width="0dp"
+                        app:layout_constraintWidth_percent="0.8"
+                        android:layout_height="wrap_content"
+                        app:boxBackgroundColor="@android:color/transparent"
+                        android:hint="@string/mobile_no_hint"
+                        app:startIconDrawable="@drawable/round_phone_24"
+                        app:errorEnabled="true"
+                        app:boxStrokeErrorColor="@color/error_color"
+                        android:layout_marginTop="16dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:layout_constraintBottom_toTopOf="@+id/til_password"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/tv_login_screen_banner">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_mobile_no"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:inputType="number"
+                            android:maxLength="10"
+                            android:textSize="20sp"
+                            android:textColor="?android:textColorPrimary"
+                            android:maxLines="1"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/til_password"
+                        android:layout_width="0dp"
+                        app:layout_constraintWidth_percent="0.8"
+                        android:layout_height="wrap_content"
+                        app:boxBackgroundColor="@android:color/transparent"
+                        android:hint="@string/password_hint"
+                        app:startIconDrawable="@drawable/round_lock_24"
+                        android:maxLength="20"
+                        app:passwordToggleEnabled="true"
+                        app:boxStrokeErrorColor="@color/error_color"
+                        android:layout_marginTop="16dp"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        app:layout_constraintBottom_toTopOf="@id/btn_login"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/til_mobile_no">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/et_password"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:textSize="20sp"
+                            android:inputType="textPassword"
+                            android:textColor="?android:textColorPrimary"
+                            android:maxLines="1"
+                            />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <Button
+                        android:id="@+id/btn_login"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:textSize="20sp"
+                        android:background="@drawable/button_background"
+                        android:text="@string/login_label"
+                        android:textColor="?attr/colorOnPrimary"
+                        android:textAllCaps="false"
+                        android:layout_marginTop="16dp"
+                        app:layout_constraintBottom_toTopOf="@+id/tv_sign_up"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/til_password"
+                        app:layout_constraintWidth_percent="0.7" />
+
+                    <Button
+                        android:id="@+id/tv_sign_up"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="@string/register_label"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorPrimary"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:textAllCaps="false"
+                        android:background="@drawable/ripple_effect_transparent_button"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btn_login"
+                        app:layout_constraintWidth_percent="0.7"/>
+
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+        </ScrollView>
+
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/gl_margin_top"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.35" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
