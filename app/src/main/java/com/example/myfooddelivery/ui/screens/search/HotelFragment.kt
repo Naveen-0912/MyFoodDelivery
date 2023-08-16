@@ -118,5 +118,6 @@ class HotelFragment: Fragment() {
 
         setUpRecyclerView()
         applyFilters()
+        //changed
     }
 }
